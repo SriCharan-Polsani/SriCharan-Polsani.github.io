@@ -1,441 +1,961 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sri Charan Polsani | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sri Charan Polsani | Portfolio</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-    <style>
-        :root {
-            --bg: #0f172a;
-            --bg-alt: #020617;
-            --card-bg: #020617;
-            --primary: #38bdf8;
-            --primary-soft: rgba(56, 189, 248, 0.1);
-            --text-main: #e5e7eb;
-            --text-muted: #9ca3af;
-            --border-subtle: rgba(148, 163, 184, 0.3);
-        }
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #020617;
+      --bg-card: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.1);
+      --accent-strong: #0ea5e9;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.3);
+      --shadow-soft: 0 30px 80px rgba(15, 23, 42, 0.9);
+      --radius-lg: 24px;
+      --radius-md: 18px;
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            background: radial-gradient(circle at top, #1d283a 0, #020617 55%, #000 100%);
-            color: var(--text-main);
-            min-height: 100vh;
-        }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top left, #1e293b 0, #020617 52%, #000 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
 
-        .page {
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 32px 16px 40px;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        header {
-            border-radius: 24px;
-            padding: 28px 24px 24px;
-            background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(15,23,42,0.88));
-            border: 1px solid rgba(148,163,184,0.35);
-            box-shadow:
-                0 24px 80px rgba(15,23,42,0.8),
-                0 0 0 1px rgba(15,23,42,0.9);
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
+    /* ====== LAYOUT WRAPPER ====== */
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
 
-        .avatar {
-            width: 88px;
-            height: 88px;
-            border-radius: 24px;
-            background: radial-gradient(circle at 30% 20%, #38bdf8, #0ea5e9 40%, #0369a1 70%, #020617 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            font-weight: 700;
-            color: #e5f4ff;
-            border: 1px solid rgba(148,163,184,0.6);
-            box-shadow:
-                0 18px 40px rgba(56,189,248,0.45),
-                0 0 0 1px rgba(15,23,42,0.9);
-        }
+    /* ====== TOP NAV ====== */
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 24px 65px rgba(15, 23, 42, 0.9);
+      position: sticky;
+      top: 14px;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+    }
 
-        .header-main {
-            flex: 1;
-        }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        .name {
-            font-size: 26px;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-        }
+    .logo-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #38bdf8, #0ea5e9 40%, #0369a1 70%, #020617 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #e5f4ff;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+    }
 
-        .role {
-            font-size: 15px;
-            font-weight: 400;
-            color: var(--text-muted);
-            margin-top: 4px;
-        }
+    .nav-text-main {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
 
-        .pill-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 12px;
-        }
+    .nav-text-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
 
-        .pill {
-            font-size: 11px;
-            padding: 6px 10px;
-            border-radius: 999px;
-            border: 1px solid rgba(148,163,184,0.35);
-            background: rgba(15,23,42,0.8);
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 13px;
+    }
 
-        .header-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            min-width: 180px;
-        }
+    .nav-link {
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--text-muted);
+      transition: background 0.12s ease, color 0.12s ease, transform 0.12s ease;
+    }
 
-        .btn-primary,
-        .btn-ghost {
-            border-radius: 999px;
-            padding: 8px 14px;
-            font-size: 13px;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            text-align: center;
-            transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
-        }
+    .nav-link:hover {
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-            color: #02121f;
-            box-shadow: 0 12px 35px rgba(56,189,248,0.5);
-        }
+    .nav-link.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color: #02131e;
+      font-weight: 500;
+      box-shadow: 0 12px 32px rgba(56, 189, 248, 0.5);
+    }
 
-        .btn-primary:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 16px 45px rgba(56,189,248,0.7);
-        }
+    /* Mobile nav */
+    .nav-toggle {
+      display: none;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.92);
+      padding: 6px 10px;
+      font-size: 12px;
+      color: var(--text-main);
+      gap: 6px;
+      align-items: center;
+      cursor: pointer;
+    }
 
-        .btn-ghost {
-            border: 1px solid rgba(148,163,184,0.5);
-            background: rgba(15,23,42,0.9);
-            color: var(--text-main);
-        }
+    .nav-toggle span {
+      display: inline-block;
+      width: 14px;
+      height: 1px;
+      background: var(--text-main);
+      box-shadow: 0 4px 0 var(--text-main), 0 -4px 0 var(--text-main);
+    }
 
-        .btn-ghost:hover {
-            transform: translateY(-1px);
-            background: rgba(15,23,42,1);
-            box-shadow: 0 10px 30px rgba(15,23,42,0.8);
-        }
+    #navCheckbox {
+      display: none;
+    }
 
-        main {
-            margin-top: 22px;
-            display: grid;
-            grid-template-columns: 3fr 2.4fr;
-            gap: 18px;
-        }
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
 
-        section {
-            border-radius: 22px;
-            padding: 18px 18px 16px;
-            background: rgba(15,23,42,0.96);
-            border: 1px solid rgba(31,41,55,0.85);
-            box-shadow:
-                0 20px 50px rgba(15,23,42,0.9),
-                0 0 0 1px rgba(15,23,42,0.95);
-        }
+      .nav-toggle {
+        display: inline-flex;
+      }
 
-        .section-title {
-            font-size: 14px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-        }
+      #navCheckbox:checked ~ .nav-links-mobile {
+        display: flex;
+      }
+    }
 
-        .about-text {
-            font-size: 13px;
-            line-height: 1.7;
-            color: var(--text-main);
-        }
+    .nav-links-mobile {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(14px);
+      gap: 8px;
+      flex-wrap: wrap;
+    }
 
-        .about-text strong {
-            color: #e5f4ff;
-        }
+    .nav-links-mobile a {
+      font-size: 13px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-muted);
+    }
 
-        .experience-item + .experience-item {
-            margin-top: 14px;
-            padding-top: 10px;
-            border-top: 1px dashed rgba(148,163,184,0.45);
-        }
+    /* ====== HERO ====== */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+      gap: 22px;
+      margin-top: 26px;
+      align-items: stretch;
+    }
 
-        .exp-role {
-            font-size: 14px;
-            font-weight: 500;
-        }
+    .hero-main {
+      border-radius: var(--radius-lg);
+      padding: 26px 24px 24px;
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), rgba(15, 23, 42, 0.97));
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
 
-        .exp-company {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-top: 2px;
-        }
+    .hero-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
 
-        .exp-meta {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--text-muted);
-            margin-top: 6px;
-        }
+    .pill {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-muted);
+    }
 
-        ul {
-            list-style: none;
-            padding-left: 0;
-            margin: 8px 0 0;
-        }
+    .hero-title-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--accent);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 12px;
+    }
 
-        li {
-            position: relative;
-            padding-left: 14px;
-            font-size: 12px;
-            color: var(--text-main);
-            line-height: 1.6;
-        }
+    .hero-title {
+      font-size: 30px;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      margin: 0 0 10px;
+    }
 
-        li::before {
-            content: "";
-            position: absolute;
-            left: 4px;
-            top: 0.62em;
-            width: 4px;
-            height: 4px;
-            border-radius: 999px;
-            background: var(--primary);
-        }
+    .highlight {
+      color: var(--accent);
+    }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
-            margin-top: 4px;
-        }
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 36rem;
+    }
 
-        .skill-group {
-            border-radius: 14px;
-            padding: 10px 10px 9px;
-            background: radial-gradient(circle at top left, rgba(56,189,248,0.09), rgba(15,23,42,0.85));
-            border: 1px solid rgba(148,163,184,0.4);
-        }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
 
-        .skill-title {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-        }
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    }
 
-        .tag-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color: #02121f;
+      box-shadow: 0 14px 40px rgba(56, 189, 248, 0.55);
+    }
 
-        .tag {
-            font-size: 11px;
-            padding: 5px 8px;
-            border-radius: 999px;
-            background: rgba(15,23,42,0.96);
-            border: 1px solid rgba(148,163,184,0.5);
-            color: var(--text-main);
-            white-space: nowrap;
-        }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 52px rgba(56, 189, 248, 0.7);
+    }
 
-        .footer-note {
-            text-align: center;
-            margin-top: 22px;
-            font-size: 11px;
-            color: var(--text-muted);
-        }
+    .btn-ghost {
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text-main);
+    }
 
-        .footer-note span {
-            color: var(--primary);
-        }
+    .btn-ghost:hover {
+      transform: translateY(-1px);
+      background: rgba(15, 23, 42, 1);
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.9);
+    }
 
-        @media (max-width: 800px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 18px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
 
-            .header-actions {
-                width: 100%;
-                flex-direction: row;
-                justify-content: flex-start;
-                flex-wrap: wrap;
-            }
+    .hero-meta span {
+      padding-bottom: 2px;
+      border-bottom: 1px dashed rgba(148, 163, 184, 0.5);
+    }
 
-            main {
-                grid-template-columns: 1fr;
-            }
-        }
+    .hero-side {
+      border-radius: var(--radius-lg);
+      padding: 20px 18px 18px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
 
-        @media (max-width: 480px) {
-            .page {
-                padding: 18px 12px 26px;
-            }
+    .profile-card {
+      border-radius: var(--radius-md);
+      padding: 14px 14px 12px;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.2), rgba(15, 23, 42, 0.98));
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
 
-            header {
-                padding: 20px 16px 16px;
-            }
+    .profile-avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 18px;
+      background: radial-gradient(circle at 30% 20%, #38bdf8, #0ea5e9 40%, #0369a1 70%, #020617 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 700;
+      color: #e5f4ff;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      box-shadow: 0 18px 40px rgba(56, 189, 248, 0.5);
+    }
 
-            .avatar {
-                width: 76px;
-                height: 76px;
-                border-radius: 22px;
-            }
+    .profile-info-main {
+      flex: 1;
+    }
 
-            .name {
-                font-size: 22px;
-            }
+    .profile-name {
+      font-size: 16px;
+      font-weight: 600;
+    }
 
-            .role {
-                font-size: 13px;
-            }
-        }
-    </style>
+    .profile-role {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .profile-location {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .profile-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .profile-tag {
+      font-size: 11px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-main);
+    }
+
+    .side-section-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .side-card {
+      border-radius: var(--radius-md);
+      padding: 10px 12px 10px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      font-size: 12px;
+      color: var(--text-main);
+    }
+
+    .side-card strong {
+      color: #e5f4ff;
+    }
+
+    .side-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .side-tag {
+      font-size: 11px;
+      padding: 5px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.97);
+      color: var(--text-muted);
+    }
+
+    /* ====== MAIN CONTENT SECTIONS ====== */
+    .sections {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+      gap: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .sections {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .section-card {
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 16px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(31, 41, 55, 0.92);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+    }
+
+    .section-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .section-body {
+      font-size: 13px;
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    .section-body p {
+      margin: 0 0 10px;
+    }
+
+    /* Experience items */
+    .experience-item + .experience-item {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+    }
+
+    .exp-role {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .exp-company {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .exp-meta {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 8px 0 0;
+    }
+
+    li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 12px;
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 0.62em;
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .skill-group {
+      border-radius: 16px;
+      padding: 10px 10px 9px;
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.09), rgba(15, 23, 42, 0.9));
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .skill-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-main);
+      white-space: nowrap;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .project-card {
+      border-radius: 16px;
+      padding: 10px 11px 9px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.95);
+      font-size: 12px;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+      cursor: default;
+    }
+
+    .project-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 50px rgba(15, 23, 42, 0.9);
+      border-color: rgba(56, 189, 248, 0.6);
+    }
+
+    .project-title {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 3px;
+    }
+
+    .project-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .project-desc {
+      font-size: 12px;
+      color: var(--text-main);
+    }
+
+    /* Contact */
+    .contact-list {
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(148, 163, 184, 0.35);
+    }
+
+    .contact-row:last-child {
+      border-bottom: none;
+    }
+
+    .contact-label {
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 11px;
+    }
+
+    .contact-value {
+      text-align: right;
+      font-size: 12px;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 26px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .footer-note span {
+      color: var(--accent);
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 16px 12px 28px;
+      }
+
+      .hero-main {
+        padding: 20px 16px 18px;
+      }
+
+      .hero-title {
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="page">
-        <header>
-            <div class="avatar">
-                SC
-            </div>
-            <div class="header-main">
-                <div class="name">Sri Charan Polsani</div>
-                <div class="role">
-                    ServiceNow Technical Analyst · ITSM &amp; CSM · Workflow Automation
-                </div>
-                <div class="pill-row">
-                    <div class="pill">ServiceNow · ITSM · CSM</div>
-                    <div class="pill">Flow Designer &amp; Catalog Automation</div>
-                    <div class="pill">CMDB · Active Directory</div>
-                </div>
-            </div>
-            <div class="header-actions">
-                <a class="btn-primary" href="https://www.linkedin.com" target="_blank">
-                    View LinkedIn Profile
-                </a>
-                <a class="btn-ghost" href="https://github.com/SriCharan-Polsani" target="_blank">
-                    View GitHub
-                </a>
-            </div>
-        </header>
+  <div class="page">
 
-        <main>
-            <section>
-                <div class="section-title">About</div>
-                <p class="about-text">
-                    I’m <strong>Sri Charan</strong>, a ServiceNow Technical Analyst with hands-on experience in
-                    <strong>ITSM</strong>, <strong>CSM</strong>, and workflow automation. I focus on building smooth
-                    service experiences by improving catalog items, automating approvals, and keeping data clean and reliable.
-                </p>
-                <p class="about-text">
-                    Day to day, I work with incidents, requests, catalog tasks, and cases, collaborating with service owners
-                    and support teams to resolve issues, refine processes, and enhance platform usability for end users.
-                </p>
-
-                <div class="section-title" style="margin-top: 18px;">Experience</div>
-
-                <div class="experience-item">
-                    <div class="exp-role">ServiceNow Technical Analyst</div>
-                    <div class="exp-company">ADM · United States</div>
-                    <div class="exp-meta">ITSM · CSM · Workflow Automation</div>
-                    <ul>
-                        <li>Handle Incident, Request, and Catalog tasks to support day-to-day ITSM operations.</li>
-                        <li>Work on CSM cases to improve customer and end-user experience.</li>
-                        <li>Configure and support catalog items, SLAs, and Flow Designer–based workflows.</li>
-                        <li>Update CMDB CI records and validate relationships to maintain data quality.</li>
-                        <li>Support Active Directory operations such as user, group, and device updates.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <div class="section-title">Skills</div>
-                <div class="skills-grid">
-                    <div class="skill-group">
-                        <div class="skill-title">ServiceNow Platform</div>
-                        <div class="tag-row">
-                            <div class="tag">ITSM</div>
-                            <div class="tag">CSM</div>
-                            <div class="tag">Catalog Items</div>
-                            <div class="tag">SLAs</div>
-                            <div class="tag">Flow Designer</div>
-                        </div>
-                    </div>
-
-                    <div class="skill-group">
-                        <div class="skill-title">Automation &amp; Config</div>
-                        <div class="tag-row">
-                            <div class="tag">Workflow Automation</div>
-                            <div class="tag">Business Rules</div>
-                            <div class="tag">Client Scripts</div>
-                            <div class="tag">UI Policies</div>
-                        </div>
-                    </div>
-
-                    <div class="skill-group">
-                        <div class="skill-title">Data &amp; Systems</div>
-                        <div class="tag-row">
-                            <div class="tag">CMDB</div>
-                            <div class="tag">CI Relationships</div>
-                            <div class="tag">Data Quality</div>
-                            <div class="tag">Active Directory</div>
-                        </div>
-                    </div>
-
-                    <div class="skill-group">
-                        <div class="skill-title">Tech Stack</div>
-                        <div class="tag-row">
-                            <div class="tag">JavaScript</div>
-                            <div class="tag">REST APIs</div>
-                            <div class="tag">ITIL Concepts</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section-title" style="margin-top: 18px;">Focus Areas</div>
-                <ul>
-                    <li>Optimizing ServiceNow workflows to reduce manual effort and response times.</li>
-                    <li>Improving catalog experiences and request fulfillment journeys.</li>
-                    <li>Maintaining reliable configuration data for better impact analysis and support.</li>
-                </ul>
-            </section>
-        </main>
-
-        <div class="footer-note">
-            Built with <span>HTML &amp; CSS</span> · Hosted on GitHub Pages
+    <!-- TOP NAV -->
+    <header class="top-nav">
+      <div class="nav-logo">
+        <div class="logo-badge">SC</div>
+        <div>
+          <div class="nav-text-main">Sri Charan</div>
+          <div class="nav-text-sub">ServiceNow · Workflow Automation</div>
         </div>
-    </div>
+      </div>
+
+      <input type="checkbox" id="navCheckbox" />
+      <label class="nav-toggle" for="navCheckbox">
+        Menu <span></span>
+      </label>
+
+      <nav class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link primary">Contact</a>
+      </nav>
+    </header>
+
+    <nav class="nav-links-mobile">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-main">
+        <div class="hero-pill-row">
+          <div class="pill">Open to full-time roles in U.S.</div>
+        </div>
+
+        <div class="hero-title-badge">
+          ServiceNow · ITSM · CSM
+        </div>
+
+        <h1 class="hero-title">
+          ServiceNow Technical Analyst<br />
+          crafting <span class="highlight">smooth enterprise workflows</span>.
+        </h1>
+
+        <p class="hero-subtitle">
+          I’m Sri Charan, a ServiceNow Technical Analyst with hands-on experience in
+          <strong>ITSM</strong>, <strong>CSM</strong>, catalog automation, and platform configuration.
+          I design and support workflows that reduce friction for end users and improve service delivery
+          across the organization.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="#contact">
+            Contact me
+          </a>
+          <a class="btn-ghost" href="https://www.linkedin.com" target="_blank">
+            View LinkedIn
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span>5+ years overall experience</span>
+          <span>ITSM · CSM · CMDB · AD</span>
+        </div>
+      </div>
+
+      <aside class="hero-side">
+        <div class="profile-card">
+          <div class="profile-avatar">SC</div>
+          <div class="profile-info-main">
+            <div class="profile-name">Sri Charan Polsani</div>
+            <div class="profile-role">ServiceNow Technical Analyst @ ADM</div>
+            <div class="profile-location">United States · Remote / Hybrid</div>
+            <div class="profile-tags">
+              <span class="profile-tag">ServiceNow</span>
+              <span class="profile-tag">ITSM &amp; CSM</span>
+              <span class="profile-tag">Flow Designer</span>
+              <span class="profile-tag">CMDB</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="side-section-title">Core focus</div>
+          <div class="side-card">
+            Supporting <strong>Incident, Request, and Catalog</strong> processes, automating approvals and
+            task flows using <strong>Flow Designer</strong>, and keeping <strong>CMDB</strong> and
+            <strong>Active Directory</strong> data accurate and reliable.
+          </div>
+        </div>
+
+        <div>
+          <div class="side-section-title">Primary tools</div>
+          <div class="side-card">
+            <div class="side-tag-row">
+              <span class="side-tag">ServiceNow</span>
+              <span class="side-tag">ITSM &amp; CSM</span>
+              <span class="side-tag">Flow Designer</span>
+              <span class="side-tag">Business Rules</span>
+              <span class="side-tag">Client Scripts</span>
+              <span class="side-tag">UI Policies</span>
+              <span class="side-tag">CMDB</span>
+              <span class="side-tag">Active Directory</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- MAIN SECTIONS -->
+    <section class="sections">
+      <!-- LEFT COLUMN: ABOUT + EXPERIENCE -->
+      <div class="section-card" id="about">
+        <div class="section-header">
+          <div class="section-title">About</div>
+          <div class="section-sub">Who I am &amp; what I do</div>
+        </div>
+        <div class="section-body">
+          <p>
+            I specialize in supporting and enhancing the <strong>ServiceNow</strong> platform to improve
+            enterprise workflows, streamline operations, and deliver smooth digital experiences for end users.
+          </p>
+          <p>
+            In my current role as a <strong>ServiceNow Technical Analyst at ADM</strong>, I work across
+            <strong>Incident, Request, Catalog, and CSM</strong> processes. I configure catalog items,
+            approvals, SLAs, and Flow Designer pipelines to reduce manual effort and improve service delivery.
+          </p>
+          <p>
+            I enjoy collaborating with service owners, support teams, and end users to identify bottlenecks
+            and translate them into practical platform improvements.
+          </p>
+        </div>
+
+        <div class="section-header" id="experience" style="margin-top: 18px;">
+          <div class="section-title">Experience</div>
+          <div class="section-sub">Recent roles</div>
+        </div>
+
+        <div class="section-body">
+          <div class="experience-item">
+            <div class="exp-role">ServiceNow Technical Analyst</div>
+            <div class="exp-company">ADM · United States</div>
+            <div class="exp-meta">ITSM · CSM · Catalog · CMDB · Active Directory</div>
+            <ul>
+              <li>Handle Incident, Request, and Catalog tasks to support day-to-day ITSM operations.</li>
+              <li>Work on CSM cases to improve customer and end-user experience.</li>
+              <li>Configure catalog items, SLAs, and Flow Designer–based workflows for approvals and task routing.</li>
+              <li>Update CMDB records and validate CI relationships to maintain data quality and consistency.</li>
+              <li>Support Active Directory operations including user, group, and device updates.</li>
+            </ul>
+          </div>
+
+          <!-- You can add older experience here later if you want -->
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: SKILLS + PROJECTS + CONTACT -->
+      <div>
+        <div class="section-card" id="skills">
+          <div class="section-header">
+            <div class="section-title">Skills</div>
+            <div class="section-sub">What I work with</div>
+          </div>
+          <div class="section-body">
+            <div class="skills-grid">
+              <div class="skill-group">
+                <div class="skill-title">ServiceNow Platform</div>
+                <div class="tag-row">
+                  <span class="tag">ITSM</span>
+                  <span class="tag">CSM</span>
+                  <span class="tag">Catalog Items</span>
+                  <span class="tag">SLAs</span>
+                  <span class="tag">Flow Designer</span>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <div class="skill-title">Automation &amp; Config</div>
+                <div class="tag-row">
+                  <span class="tag">Workflow Automation</span>
+                  <span class="tag">Business Rules</span>
+                  <span class="tag">Client Scripts</span>
+                  <span class="tag">UI Policies</span>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <div class="skill-title">Data &amp; Systems</div>
+                <div class="tag-row">
+                  <span class="tag">CMDB</span>
+                  <span class="tag">CI Relationships</span>
+                  <span class="tag">Data Quality</span>
+                  <span class="tag">Active Directory</span>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <div class="skill-title">Foundations</div>
+                <div class="tag-row">
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">REST APIs</span>
+                  <span class="tag">ITIL Concepts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-card" id="projects" style="margin-top: 16px;">
+          <div class="section-header">
+            <div class="section-title">Projects</div>
+            <div class="section-sub">A quick snapshot</div>
+          </div>
+          <div class="section-body">
+            <div class="projects-grid">
+              <div class="project-card">
+                <div class="project-title">ITSM Catalog Automation</div>
+                <div class="project-meta">ServiceNow · Flow Designer · Approvals</div>
+                <div class="project-desc">
+                  Built Flow Designer–based automations for common IT requests, standardizing tasks, approvals,
+                  and notifications to reduce manual handling and improve SLA performance.
+                </div>
+              </div>
+
+              <div class="project-card">
+                <div class="project-title">CMDB Data Quality Improvements</div>
+                <div class="project-meta">ServiceNow · CMDB · CI Relationships</div>
+                <div class="project-desc">
+                  Helped update and correct CI records and relationships, improving impact analysis and dependency
+                  visibility for support teams.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-card" id="contact" style="margin-top: 16px;">
+          <div class="section-header">
+            <div class="section-title">Contact</div>
+            <div class="section-sub">Let’s connect</div>
+          </div>
+          <div class="section-body">
+            <p>If you’d like to discuss opportunities, ServiceNow work, or collaborations, feel free to reach out.</p>
+
+            <div class="contact-list">
+              <div class="contact-row">
+                <div class="contact-label">Email</div>
+                <div class="contact-value">
+                  <!-- replace with your real email -->
+                  <a href="mailto:youremail@example.com">youremail@example.com</a>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-label">LinkedIn</div>
+                <div class="contact-value">
+                  <a href="https://www.linkedin.com" target="_blank">linkedin.com/in/sricharan</a>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-label">GitHub</div>
+                <div class="contact-value">
+                  <a href="https://github.com/SriCharan-Polsani" target="_blank">github.com/SriCharan-Polsani</a>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-label">Location</div>
+                <div class="contact-value">
+                  United States · Open to relocation
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-note">
+      Built by <span>Sri Charan Polsani</span> · Hosted on GitHub Pages
+    </footer>
+  </div>
 </body>
 </html>
