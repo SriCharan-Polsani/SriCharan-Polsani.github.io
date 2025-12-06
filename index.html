@@ -1,678 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Sri Charan Polsani | ServiceNow & Workflow Automation Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --bg: #050816;
-      --bg-alt: #0b1020;
-      --card: #0f172a;
-      --accent: #4f46e5;
-      --accent-soft: rgba(79, 70, 229, 0.18);
-      --accent-strong: #6366f1;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1f2937;
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.9);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Charan Polsani | Portfolio</title>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(79, 70, 229, 0.35), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.25), transparent 55%),
-        #020617;
-      color: var(--text);
-      line-height: 1.6;
-    }
+    <style>
+        :root {
+            --bg: #0f172a;
+            --bg-alt: #020617;
+            --card-bg: #020617;
+            --primary: #38bdf8;
+            --primary-soft: rgba(56, 189, 248, 0.1);
+            --text-main: #e5e7eb;
+            --text-muted: #9ca3af;
+            --border-subtle: rgba(148, 163, 184, 0.3);
+        }
 
-    a {
-      color: var(--accent-strong);
-      text-decoration: none;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
+        body {
+            margin: 0;
+            font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(circle at top, #1d283a 0, #020617 55%, #000 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+        }
 
-    .page {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px 16px 80px;
-    }
+        .page {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 32px 16px 40px;
+        }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 26px;
-      gap: 12px;
-    }
+        header {
+            border-radius: 24px;
+            padding: 28px 24px 24px;
+            background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(15,23,42,0.88));
+            border: 1px solid rgba(148,163,184,0.35);
+            box-shadow:
+                0 24px 80px rgba(15,23,42,0.8),
+                0 0 0 1px rgba(15,23,42,0.9);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+        .avatar {
+            width: 88px;
+            height: 88px;
+            border-radius: 24px;
+            background: radial-gradient(circle at 30% 20%, #38bdf8, #0ea5e9 40%, #0369a1 70%, #020617 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: #e5f4ff;
+            border: 1px solid rgba(148,163,184,0.6);
+            box-shadow:
+                0 18px 40px rgba(56,189,248,0.45),
+                0 0 0 1px rgba(15,23,42,0.9);
+        }
 
-    .avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #a5b4fc, #4f46e5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 20px;
-      color: white;
-      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.8);
-    }
+        .header-main {
+            flex: 1;
+        }
 
-    .brand-text h1 {
-      font-size: 22px;
-      font-weight: 600;
-    }
+        .name {
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
 
-    .brand-text p {
-      font-size: 13px;
-      color: var(--muted);
-    }
+        .role {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
 
-    .nav-links {
-      display: flex;
-      gap: 12px;
-      font-size: 13px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
 
-    .nav-links a {
-      color: var(--muted);
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      background: rgba(15, 23, 42, 0.7);
-    }
+        .pill {
+            font-size: 11px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.35);
+            background: rgba(15,23,42,0.8);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
 
-    .nav-links a:hover {
-      border-color: var(--accent-soft);
-      background: rgba(15, 23, 42, 0.95);
-      text-decoration: none;
-    }
+        .header-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 180px;
+        }
 
-    .hero {
-      padding: 22px 18px 20px;
-      border-radius: var(--radius-lg);
-      background:
-        radial-gradient(circle at top left, rgba(79, 70, 229, 0.35), transparent 55%),
-        linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.98));
-      border: 1px solid rgba(75, 85, 99, 0.7);
-      box-shadow: var(--shadow-soft);
-      display: grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.6fr);
-      gap: 18px;
-      align-items: center;
-      margin-bottom: 22px;
-    }
+        .btn-primary,
+        .btn-ghost {
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+        }
 
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      font-size: 11px;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
+        .btn-primary {
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            color: #02121f;
+            box-shadow: 0 12px 35px rgba(56,189,248,0.5);
+        }
 
-    .hero-tag span {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 12px #22c55e;
-    }
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 16px 45px rgba(56,189,248,0.7);
+        }
 
-    .hero h2 {
-      font-size: 26px;
-      margin-bottom: 10px;
-    }
+        .btn-ghost {
+            border: 1px solid rgba(148,163,184,0.5);
+            background: rgba(15,23,42,0.9);
+            color: var(--text-main);
+        }
 
-    .hero h2 span {
-      color: var(--accent-strong);
-    }
+        .btn-ghost:hover {
+            transform: translateY(-1px);
+            background: rgba(15,23,42,1);
+            box-shadow: 0 10px 30px rgba(15,23,42,0.8);
+        }
 
-    .hero-subtitle {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
+        main {
+            margin-top: 22px;
+            display: grid;
+            grid-template-columns: 3fr 2.4fr;
+            gap: 18px;
+        }
 
-    .hero-points {
-      font-size: 13px;
-      margin-bottom: 14px;
-    }
+        section {
+            border-radius: 22px;
+            padding: 18px 18px 16px;
+            background: rgba(15,23,42,0.96);
+            border: 1px solid rgba(31,41,55,0.85);
+            box-shadow:
+                0 20px 50px rgba(15,23,42,0.9),
+                0 0 0 1px rgba(15,23,42,0.95);
+        }
 
-    .hero-points span {
-      color: var(--accent-strong);
-      font-weight: 500;
-    }
+        .section-title {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
 
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
+        .about-text {
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--text-main);
+        }
 
-    .btn {
-      border-radius: 999px;
-      padding: 7px 14px;
-      font-size: 13px;
-      border: 1px solid transparent;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-    }
+        .about-text strong {
+            color: #e5f4ff;
+        }
 
-    .btn-primary {
-      background: linear-gradient(135deg, #6366f1, #4f46e5);
-      color: white;
-      box-shadow: 0 12px 30px rgba(79, 70, 229, 0.9);
-    }
+        .experience-item + .experience-item {
+            margin-top: 14px;
+            padding-top: 10px;
+            border-top: 1px dashed rgba(148,163,184,0.45);
+        }
 
-    .btn-outline {
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--text);
-      border-color: rgba(148, 163, 184, 0.8);
-    }
+        .exp-role {
+            font-size: 14px;
+            font-weight: 500;
+        }
 
-    .hero-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 11px;
-      color: var(--muted);
-    }
+        .exp-company {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
 
-    .chip {
-      padding: 5px 9px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(55, 65, 81, 0.9);
-    }
+        .exp-meta {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
 
-    .chip strong {
-      color: var(--accent-strong);
-    }
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 8px 0 0;
+        }
 
-    .hero-right {
-      border-radius: var(--radius-md);
-      background: radial-gradient(circle at top, rgba(79, 70, 229, 0.5), transparent 60%), #020617;
-      border: 1px solid rgba(75, 85, 99, 0.8);
-      padding: 14px 14px 16px;
-      position: relative;
-      overflow: hidden;
-    }
+        li {
+            position: relative;
+            padding-left: 14px;
+            font-size: 12px;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-    .hero-right-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 11px;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
+        li::before {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 0.62em;
+            width: 4px;
+            height: 4px;
+            border-radius: 999px;
+            background: var(--primary);
+        }
 
-    .company-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.96);
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      font-size: 11px;
-    }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin-top: 4px;
+        }
 
-    .company-pill span {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #22c55e;
-    }
+        .skill-group {
+            border-radius: 14px;
+            padding: 10px 10px 9px;
+            background: radial-gradient(circle at top left, rgba(56,189,248,0.09), rgba(15,23,42,0.85));
+            border: 1px solid rgba(148,163,184,0.4);
+        }
 
-    .hero-right-list {
-      list-style: none;
-      padding-left: 0;
-      font-size: 12px;
-      color: var(--muted);
-    }
+        .skill-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
 
-    .hero-right-list li {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
 
-    .hero-right-list li::before {
-      content: "•";
-      color: var(--accent-strong);
-      font-size: 16px;
-      line-height: 1;
-      margin-top: 1px;
-    }
+        .tag {
+            font-size: 11px;
+            padding: 5px 8px;
+            border-radius: 999px;
+            background: rgba(15,23,42,0.96);
+            border: 1px solid rgba(148,163,184,0.5);
+            color: var(--text-main);
+            white-space: nowrap;
+        }
 
-    main {
-      display: grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.6fr);
-      gap: 18px;
-      margin-bottom: 18px;
-    }
+        .footer-note {
+            text-align: center;
+            margin-top: 22px;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
 
-    .card {
-      background: rgba(15, 23, 42, 0.98);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      padding: 16px 16px 14px;
-      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.95);
-    }
+        .footer-note span {
+            color: var(--primary);
+        }
 
-    .card h3 {
-      font-size: 15px;
-      margin-bottom: 4px;
-    }
+        @media (max-width: 800px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-    .card-subtitle {
-      font-size: 11px;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
+            .header-actions {
+                width: 100%;
+                flex-direction: row;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
 
-    .experience-list {
-      list-style: none;
-      font-size: 12px;
-      margin-top: 4px;
-    }
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
 
-    .experience-item {
-      margin-bottom: 10px;
-      padding-bottom: 8px;
-      border-bottom: 1px dashed rgba(55, 65, 81, 0.8);
-    }
+        @media (max-width: 480px) {
+            .page {
+                padding: 18px 12px 26px;
+            }
 
-    .experience-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-      margin-bottom: 0;
-    }
+            header {
+                padding: 20px 16px 16px;
+            }
 
-    .exp-title {
-      font-size: 13px;
-      font-weight: 600;
-    }
+            .avatar {
+                width: 76px;
+                height: 76px;
+                border-radius: 22px;
+            }
 
-    .exp-meta {
-      font-size: 11px;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
+            .name {
+                font-size: 22px;
+            }
 
-    .exp-bullets {
-      list-style: disc;
-      padding-left: 16px;
-      margin: 3px 0 0;
-    }
-
-    .exp-bullets li {
-      margin-bottom: 3px;
-    }
-
-    .projects-list {
-      list-style: none;
-      font-size: 12px;
-      margin-top: 6px;
-    }
-
-    .projects-list li {
-      margin-bottom: 10px;
-      padding: 9px 10px;
-      border-radius: var(--radius-md);
-      background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.2), transparent 70%), rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(55, 65, 81, 0.9);
-    }
-
-    .projects-list a {
-      font-weight: 500;
-    }
-
-    .projects-list p {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 3px;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      font-size: 12px;
-      margin-top: 8px;
-    }
-
-    .skill-col h4 {
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .skill-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .skill-chip {
-      font-size: 11px;
-      padding: 4px 7px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.96);
-      border: 1px solid rgba(55, 65, 81, 1);
-      color: var(--text);
-    }
-
-    .contact {
-      margin-top: 18px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    footer {
-      margin-top: 22px;
-      font-size: 11px;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    @media (max-width: 880px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .nav-links {
-        justify-content: flex-start;
-      }
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      main {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+            .role {
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="brand">
-        <div class="avatar">SC</div>
-        <div class="brand-text">
-          <h1 id="home">Sri Charan Polsani</h1>
-          <p>ServiceNow Technical Analyst · ITSM · CSM · Workflow Automation · CMDB · Active Directory</p>
+    <div class="page">
+        <header>
+            <div class="avatar">
+                SC
+            </div>
+            <div class="header-main">
+                <div class="name">Sri Charan Polsani</div>
+                <div class="role">
+                    ServiceNow Technical Analyst · ITSM &amp; CSM · Workflow Automation
+                </div>
+                <div class="pill-row">
+                    <div class="pill">ServiceNow · ITSM · CSM</div>
+                    <div class="pill">Flow Designer &amp; Catalog Automation</div>
+                    <div class="pill">CMDB · Active Directory</div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a class="btn-primary" href="https://www.linkedin.com" target="_blank">
+                    View LinkedIn Profile
+                </a>
+                <a class="btn-ghost" href="https://github.com/SriCharan-Polsani" target="_blank">
+                    View GitHub
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <div class="section-title">About</div>
+                <p class="about-text">
+                    I’m <strong>Sri Charan</strong>, a ServiceNow Technical Analyst with hands-on experience in
+                    <strong>ITSM</strong>, <strong>CSM</strong>, and workflow automation. I focus on building smooth
+                    service experiences by improving catalog items, automating approvals, and keeping data clean and reliable.
+                </p>
+                <p class="about-text">
+                    Day to day, I work with incidents, requests, catalog tasks, and cases, collaborating with service owners
+                    and support teams to resolve issues, refine processes, and enhance platform usability for end users.
+                </p>
+
+                <div class="section-title" style="margin-top: 18px;">Experience</div>
+
+                <div class="experience-item">
+                    <div class="exp-role">ServiceNow Technical Analyst</div>
+                    <div class="exp-company">ADM · United States</div>
+                    <div class="exp-meta">ITSM · CSM · Workflow Automation</div>
+                    <ul>
+                        <li>Handle Incident, Request, and Catalog tasks to support day-to-day ITSM operations.</li>
+                        <li>Work on CSM cases to improve customer and end-user experience.</li>
+                        <li>Configure and support catalog items, SLAs, and Flow Designer–based workflows.</li>
+                        <li>Update CMDB CI records and validate relationships to maintain data quality.</li>
+                        <li>Support Active Directory operations such as user, group, and device updates.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-title">Skills</div>
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <div class="skill-title">ServiceNow Platform</div>
+                        <div class="tag-row">
+                            <div class="tag">ITSM</div>
+                            <div class="tag">CSM</div>
+                            <div class="tag">Catalog Items</div>
+                            <div class="tag">SLAs</div>
+                            <div class="tag">Flow Designer</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-title">Automation &amp; Config</div>
+                        <div class="tag-row">
+                            <div class="tag">Workflow Automation</div>
+                            <div class="tag">Business Rules</div>
+                            <div class="tag">Client Scripts</div>
+                            <div class="tag">UI Policies</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-title">Data &amp; Systems</div>
+                        <div class="tag-row">
+                            <div class="tag">CMDB</div>
+                            <div class="tag">CI Relationships</div>
+                            <div class="tag">Data Quality</div>
+                            <div class="tag">Active Directory</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-title">Tech Stack</div>
+                        <div class="tag-row">
+                            <div class="tag">JavaScript</div>
+                            <div class="tag">REST APIs</div>
+                            <div class="tag">ITIL Concepts</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-title" style="margin-top: 18px;">Focus Areas</div>
+                <ul>
+                    <li>Optimizing ServiceNow workflows to reduce manual effort and response times.</li>
+                    <li>Improving catalog experiences and request fulfillment journeys.</li>
+                    <li>Maintaining reliable configuration data for better impact analysis and support.</li>
+                </ul>
+            </section>
+        </main>
+
+        <div class="footer-note">
+            Built with <span>HTML &amp; CSS</span> · Hosted on GitHub Pages
         </div>
-      </div>
-      <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#know-me">Know Me</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#projects">My Projects</a>
-        <a href="#resume">My Resume</a>
-      </nav>
-    </header>
-
-    <section class="hero" id="know-me">
-      <div>
-        <div class="hero-tag">
-          <span></span>
-          Open to ServiceNow / Workflow Automation roles in the U.S.
-        </div>
-        <h2>Hi, I’m Sri Charan — I build <span>workflow-driven</span> ServiceNow experiences.</h2>
-        <p class="hero-subtitle">
-          ServiceNow Technical Analyst and M.S. Computer Science graduate from the University of Bridgeport,
-          with hands-on experience in ITSM, CSM, catalog automation, CMDB, and enterprise IT operations.
-        </p>
-        <p class="hero-points">
-          My mission is to make IT services <span>simpler, faster, and more reliable</span> using automation,
-          clean configurations, and data-driven improvements.
-        </p>
-        <div class="hero-buttons">
-          <a class="btn btn-primary" href="#projects">Explore my ServiceNow projects →</a>
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/sricharanpolsani" target="_blank">
-            Connect with me on LinkedIn
-          </a>
-        </div>
-        <div class="hero-chips">
-          <div class="chip"><strong>Role:</strong> ServiceNow Technical Analyst</div>
-          <div class="chip"><strong>Current:</strong> Supporting ADM IT operations</div>
-          <div class="chip"><strong>Focus:</strong> ITSM · CSM · Catalog · CMDB · AD</div>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="hero-right-header">
-          <div class="company-pill">
-            <span></span>
-            Live ServiceNow Environment
-          </div>
-          <div>ITSM · CSM · Catalog</div>
-        </div>
-        <ul class="hero-right-list">
-          <li>Support Incident, Request, Catalog, and Case Management in ServiceNow.</li>
-          <li>Design Flow Designer workflows for routing, approvals, notifications, and SLAs.</li>
-          <li>Configure Business Rules, Client Scripts, UI Policies, and Catalog logic.</li>
-          <li>Maintain CMDB data quality and CI relationships for better impact analysis.</li>
-          <li>Support Active Directory provisioning for users, groups, and devices.</li>
-        </ul>
-      </div>
-    </section>
-
-    <main>
-      <section class="card" id="experience">
-        <h3>Experience</h3>
-        <p class="card-subtitle">My journey across ServiceNow, IT operations, and support</p>
-
-        <ul class="experience-list">
-          <li class="experience-item">
-            <div class="exp-title">ServiceNow Technical Analyst · ADM</div>
-            <div class="exp-meta">Aug 2025 – Present · United States</div>
-            <ul class="exp-bullets">
-              <li>Support ITSM & CSM processes (Incident, Request, Catalog, Case Management).</li>
-              <li>Configure Business Rules, Client Scripts, UI Policies, and Catalog Items.</li>
-              <li>Build Flow Designer automations for approvals, routing, notifications, and SLA-driven escalation.</li>
-              <li>Update and maintain CMDB data, CI relationships, and lifecycle attributes.</li>
-            </ul>
-          </li>
-
-          <li class="experience-item">
-            <div class="exp-title">Technical Analyst · Molina Healthcare</div>
-            <div class="exp-meta">Nov 2023 – Aug 2025 · Remote</div>
-            <ul class="exp-bullets">
-              <li>Supported enterprise IT operations and access workflows.</li>
-              <li>Worked with ITSM processes, ticket triage, and knowledge content.</li>
-            </ul>
-          </li>
-
-          <li class="experience-item">
-            <div class="exp-title">Technical Support Specialist · LM Wind Power</div>
-            <div class="exp-meta">Jul 2019 – Mar 2023 · Bengaluru, India · Hybrid</div>
-            <ul class="exp-bullets">
-              <li>Provided L1/L2 support for hardware, OS, and enterprise applications.</li>
-              <li>Worked with ticketing, asset tracking, and onboarding/offboarding workflows.</li>
-            </ul>
-          </li>
-        </ul>
-      </section>
-
-      <aside class="card" id="projects">
-        <h3>My Projects</h3>
-        <p class="card-subtitle">ServiceNow automation & workflow-focused work</p>
-
-        <ul class="projects-list">
-          <li>
-            <a href="https://github.com/SriCharan-Polsani/servicenow-itsm-automation-flow-designer" target="_blank">
-              1️⃣ Incident & Request Automation – Flow Designer
-            </a>
-            <p>
-              Automated routing, approvals, notifications, SLA escalation, and work note updates using Flow Designer
-              for Incident and Request records.
-            </p>
-          </li>
-          <li>
-            <a href="https://github.com/SriCharan-Polsani/servicenow-catalog-item-automation" target="_blank">
-              2️⃣ Dynamic Catalog Item Automation
-            </a>
-            <p>
-              Catalog item powered by Business Rules, Client Scripts, and Flow Designer to validate inputs and
-              auto-create tasks with correct assignment.
-            </p>
-          </li>
-          <li>
-            <em>Next:</em> CMDB data-quality automation and CSM case workflow improvements.
-          </li>
-        </ul>
-      </aside>
-    </main>
-
-    <section class="card" id="education">
-      <h3>Education</h3>
-      <p class="card-subtitle">My academic foundation in Computer Science</p>
-
-      <ul class="experience-list">
-        <li class="experience-item">
-          <div class="exp-title">M.S. in Computer Science</div>
-          <div class="exp-meta">University of Bridgeport · GPA 3.5</div>
-          <ul class="exp-bullets">
-            <li>Courses: OOP with Design Patterns, Algorithms, Web Applications, Deep Learning, Cloud Computing, NLP.</li>
-          </ul>
-        </li>
-
-        <li class="experience-item">
-          <div class="exp-title">B.Tech in Computer Science and Engineering</div>
-          <div class="exp-meta">SR University · GPA 7.63</div>
-          <ul class="exp-bullets">
-            <li>Courses: Data Structures, DBMS, Computer Networks, Operating Systems, IoT, Software Engineering.</li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-
-    <section class="card" id="skills">
-      <h3>Tools & Technologies I Work With</h3>
-      <p class="card-subtitle">Platforms, modules, and tools I actively use</p>
-
-      <div class="skills-grid">
-        <div class="skill-col">
-          <h4>ServiceNow & ITSM</h4>
-          <div class="skill-chips">
-            <span class="skill-chip">ITSM · CSM</span>
-            <span class="skill-chip">Incident / Request / Catalog</span>
-            <span class="skill-chip">Case Management</span>
-            <span class="skill-chip">Flow Designer</span>
-            <span class="skill-chip">Workflow Editor</span>
-            <span class="skill-chip">Business Rules</span>
-            <span class="skill-chip">Client Scripts</span>
-            <span class="skill-chip">UI Policies</span>
-            <span class="skill-chip">ACLs</span>
-          </div>
-        </div>
-        <div class="skill-col">
-          <h4>Platform & Operations</h4>
-          <div class="skill-chips">
-            <span class="skill-chip">CMDB</span>
-            <span class="skill-chip">CI Relationships</span>
-            <span class="skill-chip">SLA Management</span>
-            <span class="skill-chip">Active Directory</span>
-            <span class="skill-chip">User Provisioning</span>
-            <span class="skill-chip">ITIL</span>
-            <span class="skill-chip">Troubleshooting</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="skills-grid" style="margin-top:10px;">
-        <div class="skill-col">
-          <h4>Development</h4>
-          <div class="skill-chips">
-            <span class="skill-chip">JavaScript / GlideScript</span>
-            <span class="skill-chip">REST APIs</span>
-            <span class="skill-chip">Basic SQL</span>
-            <span class="skill-chip">Automation scripting</span>
-          </div>
-        </div>
-        <div class="skill-col">
-          <h4>Tools & Ecosystem</h4>
-          <div class="skill-chips">
-            <span class="skill-chip">Git & GitHub</span>
-            <span class="skill-chip">Service Portal</span>
-            <span class="skill-chip">Windows / Linux</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="card" id="resume">
-      <h3>My Resume</h3>
-      <p class="card-subtitle">Quick way to view my complete profile</p>
-      <p style="font-size:12px; color:var(--muted); margin-bottom:10px;">
-        You can view my experience, education, and skills in more detail via my LinkedIn profile.
-        Later, I can add a direct PDF resume download link here.
-      </p>
-      <a class="btn btn-primary" href="https://www.linkedin.com/in/sricharanpolsani" target="_blank">
-        View my full profile / resume on LinkedIn
-      </a>
-    </section>
-
-    <section class="contact" id="contact" style="margin-top:18px;">
-      <h3 style="font-size:14px; margin-bottom:6px;">Contact</h3>
-      <p>
-        I’m open to connecting about ServiceNow, ITSM/CSM work, workflow automation, and platform roles
-        in the U.S.
-      </p>
-      <p style="margin-top:6px;">
-        🔗 LinkedIn:
-        <a href="https://www.linkedin.com/in/sricharanpolsani" target="_blank">
-          linkedin.com/in/sricharanpolsani
-        </a><br />
-        💻 GitHub:
-        <a href="https://github.com/SriCharan-Polsani" target="_blank">
-          github.com/SriCharan-Polsani
-        </a>
-      </p>
-    </section>
-
-    <footer>
-      © <span id="year"></span> · Built by Sri Charan Polsani · ServiceNow · ITSM · Automation
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+    </div>
 </body>
 </html>
